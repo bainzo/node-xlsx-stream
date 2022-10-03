@@ -1,0 +1,25 @@
+name: "Run test on push"
+
+on:
+  push:
+    paths:
+      - '!README.md'
+      - '!LICENCE'
+      - '!.gitignore'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12, 14, 16, 18]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build on Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci --ignore-scripts
+      - run: npm test
+        env:
+          CI: true

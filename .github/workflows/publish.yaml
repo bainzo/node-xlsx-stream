@@ -1,0 +1,25 @@
+name: publish
+
+on:
+  push:
+    branches:
+      - brandwatch-scoped
+    tags:
+      - 'brandwatch-[0-9]+.[0-9]+.[0-9]+*'
+
+jobs:
+  publish:
+    if: github.repository == 'BrandwatchLtd/node-xlsx-stream'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Pack
+        id: npm-pack
+        run: |
+          PACKAGE_FILE=$(npm pack --ignore-scripts)
+          echo "package_file=${PACKAGE_FILE}" | tee -a $GITHUB_OUTPUT
+      - uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ steps.npm-pack.outputs.package_file }}

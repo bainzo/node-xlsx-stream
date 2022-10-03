@@ -1,8 +1,8 @@
 {
-  "name": "xlsx-stream",
+  "name": "@brandwatch/xlsx-stream",
   "description": "Creates SpreadsheetML (.xlsx) files in sequence with streaming interface.",
   "version": "0.1.2",
-  "homepage": "https://github.com/nunukim/node-xlsx-stream",
+  "homepage": "https://github.com/brandwatchLtd/node-xlsx-stream",
   "author": {
     "name": "Ryota Suzuki",
     "email": "suzuki@galileoscope.com",
@@ -10,18 +10,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/nunukim/node-xlsx-stream.git"
+    "url": "git://github.com/brandwatchLtd/node-xlsx-stream.git"
   },
   "bugs": {
-    "url": "https://github.com/nunukim/node-xlsx-stream/issues"
+    "url": "https://github.com/brandwatchLtd/node-xlsx-stream/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/nunukim/node-xlsx-stream/blob/master/LICENSE"
+      "url": "https://github.com/brandwatchLtd/node-xlsx-stream/blob/master/LICENSE"
     }
   ],
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "engines": {
     "node": "~ 0.8.0"
   },
