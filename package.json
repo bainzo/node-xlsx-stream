@@ -26,7 +26,7 @@
     "lib"
   ],
   "engines": {
-    "node": "~ 0.8.0"
+    "node": ">= 0.8.0 < 15"
   },
   "scripts": {
     "test": "npx grunt vows"
